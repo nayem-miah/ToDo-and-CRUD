@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+ <title>edit your data</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-8 offset-2">
+                      </br>
+
+                <h4 class="text-center alert alert-info">Edit And Update Your Data </h4>
+              </br>
+              <form method="post" action="">
+
+                {% csrf_token %}
+                  {{edit_form.as_p}}
+                <input type="submit" value="Update" class="btn btn-success">
+                  <a href="{% url 'form'%}" class="btn btn-primary"> Back To Home</a>
+              </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
