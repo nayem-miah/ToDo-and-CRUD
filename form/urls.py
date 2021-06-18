@@ -3,5 +3,5 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('', views.form, name='form'),
+    path('', views.form, name='forms'),
 ]
