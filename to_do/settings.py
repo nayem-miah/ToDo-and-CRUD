@@ -43,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'to_do.urls'
@@ -128,6 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [
     BASE_DIR / 'static',
 ]
+
 STATIC_ROOT = BASE_DIR / 'assets'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
