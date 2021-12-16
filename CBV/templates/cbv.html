@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+ <title>crud page</title>
+{% endblock %}
+
+{% block body %}
+<section class="container">
+
+      </br>
+
+      </br>
+      <div class="container">
+        <div class="row">
+           <div class="col-sm-3">
+              <h4 class="text-center alert alert-info">This is with CBV</h4>
+              <form method="post" action="">
+                {% csrf_token %}
+                {{registation.as_p}}
+                <input type="submit" class="btn btn-success">
+              </form>
+           </div>
+
+           <div class="col-sm-9">
+               {% if users %}
+               <h4 class="text-center alert alert-info">Students Record</h4>
+               <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Password</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                   <tbody>
+                   {% for user in users %}
+                     <tr>
+                       <th scope="row">{{user.id}}</th>
+                       <td>{{user.name}}</td>
+                       <td>{{user.email}}</td>
+                       <td>{{user.password}}</td>
+                       <td>
+                           <a href="{% url 'edit_data' user.id %}" class="btn btn-warning btn-sm">Edit</a>
+                           <form method="POST" action="{% url 'delete_data' user.id %}" class="d-inline">
+                               {% csrf_token %}
+                               <input type="submit" value="Delete" class="btn btn-danger">
+                           </form>
+
+                       </td>
+
+                     </tr>
+                   {% endfor %}
+                   </tbody>
+                </table>
+               {% else %}
+                  <h4 class="text-center alert alert-danger">No Record Found</h4>
+               {% endif %}
+
+           </div>
+        </div>
+      </div>
+</section>
+{% endblock %}

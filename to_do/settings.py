@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'modelform',
     'auth_pass',
     'crud',
+    'CBV',
 ]
 
 MIDDLEWARE = [

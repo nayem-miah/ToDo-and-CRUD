@@ -12,5 +12,6 @@ urlpatterns = [
     path('modelform/', include('modelform.urls')),
     path('auth/', include('auth_pass.urls')),
     path('crud/', include('crud.urls')),
+    path('cbv/', include('CBV.urls')),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
