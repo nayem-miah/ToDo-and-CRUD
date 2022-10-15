@@ -26,6 +26,7 @@ class Crud_view(View):
         registation = self.registation(request.POST)
         if registation.is_valid():
            registation.save()
+           print('hello')
            return redirect('/crud/')
     
 class Delete_view(View): 
