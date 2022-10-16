@@ -4,7 +4,7 @@ from .forms import StudentRegistation
 from .models import User
 from django.views.generic import TemplateView
 from django.views.generic import FormView
-print('hello')
+
 
 
 #CRUD with CBV----------------------------------------------------------------
