@@ -4,7 +4,7 @@ from .forms import StudentRegistation
 from .models import User
 from django.views.generic import TemplateView
 from django.views.generic import FormView
-print('this is a test to see how to make push request')
+
 
 
 #CRUD with CBV----------------------------------------------------------------
@@ -58,7 +58,6 @@ class Edit_view(View):
         context = {
         'edit_form': fm
         }
-
         return render(request, self.template_name, context)
 
 
